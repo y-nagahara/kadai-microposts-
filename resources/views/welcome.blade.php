@@ -4,7 +4,7 @@
     @if (Auth::check())
         <div class="row">
             <aside class="col-sm-4">
-                @include('users.card',['user'=>Auth::user()])
+                @include('users.card', ['user' => Auth::user()])
             </aside>
             <div class="col-sm-8">
                 @if (Auth::id() == $user->id)
@@ -17,6 +17,7 @@
                 @endif
                 @if (count($microposts) > 0)
                     @include('microposts.microposts', ['microposts' => $microposts])
+                 
                 @endif
             </div>
         </div>
